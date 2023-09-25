@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}
+    - bilan chat
+{% endblock title %}
+
+{% block content %}
+<div class="chat">
+    <div class="chat-header clearfix">
+      <img style="width: 50px; height: 50px; border-radius: 50%;" src="{{user.profile.picture.url}}" alt="avatar" />
+      
+      <div class="chat-about">
+        <div class="chat-with">{{user.get_full_name}}</div>
+        <div class="chat-num-messages">{{user.profile.status}}</div>
+      </div>
+      <i class="fa fa-star"></i>
+    </div> <!-- end chat-header -->
+    
+    <div class="chat-history">
+      <ul>
+        <li class="clearfix">
+          <div class="message-data align-right">
+            <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+            <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+            
+          </div>
+          <div class="message other-message float-right">
+            Hi Vincent, how are you? How is the project coming along?
+          </div>
+        </li>
+        
+        <li>
+          <div class="message-data">
+            <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+            <span class="message-data-time">10:12 AM, Today</span>
+          </div>
+          <div class="message my-message">
+            Are we meeting today? Project has been already finished and I have results to show you.
+          </div>
+        </li>
+        
+        
+      </ul>
+      
+    </div> <!-- end chat-history -->
+    
+    <div class="chat-message clearfix">
+      <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+              
+      <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+      <i class="fa fa-file-image-o"></i>
+      
+      <button>Send</button>
+
+    </div> <!-- end chat-message -->
+    
+  </div> <!-- end chat -->
+{% endblock content %}
